@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    <title>Title</title>
+    <style>
+        .wrap{
+            margin:0 auto;
+        }
+        ul{
+            overflow: hidden;
+            width:100%;
+            padding:0;
+        }
+        li{
+            float: left;
+            list-style:none;
+            width:48%;
+        }
+        img{
+            width:100%;
+            height:200px;
+        }
+        label{
+            margin:0 auto;
+            display:block;
+            background: orange;
+            width:200px;
+            text-align:center;
+            color: white;
+            padding:7px 0;
+            border-radius: 30px;
+        }
+        label:hover{
+            background:red;
+        }
+        input{
+            display: none;
+        }
+        button{
+            display:block;
+            width:60px;
+            background: darkkhaki;
+            border:none;
+            padding:10px;
+            color: white;
+            border-radius:40px;
+            margin:0 auto;
+        }
+    </style>
+</head>
+<body>
+<div class="wrap">
+    <form action="1.html">
+        <label for="upload">上传图片</label>
+        <input type="file" id="upload" accept="image/*">
+        <!--<input type="file" id="upload" accept="image/*" multiple="multiple">-->
+        <ul></ul>
+        <button>提交</button>
+    </form>
+</div>
+<script>
+var inp = document.getElementById("upload");
+    inp.onchange = function(){
+        var files = inp.files;
+        var urls = window.URL || window.webkitURL;
+        var uu = document.getElementsByTagName("ul")[0];
+//        for (var i=0;i<files.length;i++){
+//            var src = urls.createObjectURL(files[i]);
+//            var li = '<li><img src="'+src+'" alt=""/></li>';
+//            uu.innerHTML += li;
+//        }
+        var src = urls.createObjectURL(files[0]);
+        var li = '<li><img src="'+src+'" alt=""/></li>';
+        uu.innerHTML = li;
+    };
+//获取页面加载所需时间
+window.onload=function(){
+    var loadTime = window.performance.timing.domContentLoadedEventEnd-window.performance.timing.navigationStart;
+    console.log('Page load time is  '+loadTime+'  ms');
+};
+//获取函数完成时间
+    console.time('Timer1');
+    var items=[];
+    for (var i=0;i<100000;i++){
+        items.push({index:i});
+    }
+    console.timeEnd('Timer1');
+</script>
+</body>
+</html>
