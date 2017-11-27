@@ -13,3 +13,7 @@ nolist
 [https://tiankongzhichengblank.github.io/css3/uoloadImage.html](https://tiankongzhichengblank.github.io/css3/uoloadImage.html "图片上传")
 
 ## 仅支持IE9以上浏览器 ##
+
+# 星星评分 #
+
+[https://tiankongzhichengblank.github.io/css3/pentagram.html](https://tiankongzhichengblank.github.io/css3/pentagram.html "星星评分")
